@@ -22,7 +22,7 @@ public class GetProductsController {
         this.productService = productService;
     }
 
-    @RequestMapping(value = "/get-products", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
     public List<Product> products() {
         return productService.findAll();
     }
