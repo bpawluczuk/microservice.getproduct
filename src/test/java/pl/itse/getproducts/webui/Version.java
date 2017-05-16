@@ -1,8 +1,8 @@
-package pl.itse.erp.warehouse.application.webui;
+package pl.itse.getproducts.webui;
 
 /**
- * Created by Borys on 2017-05-08.
+ * Created by Borys on 2017-05-16.
  */
 public class Version {
-    public static final String WAREHOUSE_V1 = "application/vnd.pl.itse.erp.warehouse.v1+json";
+    public static final String GETPRODUCTS_V1 = "application/vnd.pl.itse.getproducts.v1+json";
 }
