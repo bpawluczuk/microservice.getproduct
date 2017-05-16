@@ -39,7 +39,7 @@ public class Product extends BaseEntity {
 
     protected Product(){}
 
-    Product(String name, ProductType type) {
+    public Product(String name, ProductType type) {
         this.name = name;
         this.type = type;
     }
