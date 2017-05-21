@@ -3,17 +3,16 @@ package pl.itse.getproducts.webui;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.Mockito;
-
-import static org.mockito.Mockito.when;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
+import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import pl.itse.getproducts.config.AppConfig;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -22,6 +21,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
  * Created by Borys on 2017-05-16.
  */
 @RunWith(SpringRunner.class)
+@ContextConfiguration(classes={AppConfig.class})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 public class GetProductsControllerTest {
 
@@ -37,7 +37,7 @@ public class GetProductsControllerTest {
 
     @Test
     public void getProductsList() throws Exception {
-        this.mockMvc.perform(get("/").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+        this.mockMvc.perform(get("/api/v1/get-products").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
     }
 
 }
