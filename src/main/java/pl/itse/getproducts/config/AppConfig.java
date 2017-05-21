@@ -1,4 +1,4 @@
-package pl.itse.getproducts;
+package pl.itse.getproducts.config;
 
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.ComponentScan;

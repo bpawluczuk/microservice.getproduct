@@ -13,6 +13,7 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 import pl.itse.getproducts.config.AppConfig;
+import pl.itse.getproducts.config.Contract;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -23,7 +24,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @RunWith(SpringRunner.class)
 @ContextConfiguration(classes={AppConfig.class})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
-public class GetProductsControllerTest {
+public class GetProductsTest {
 
     private MockMvc mockMvc;
 
@@ -37,7 +38,7 @@ public class GetProductsControllerTest {
 
     @Test
     public void getProductsList() throws Exception {
-        this.mockMvc.perform(get("/api/v1/get-products").accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
+        this.mockMvc.perform(get(Contract.CONTRACT_PRODUCT_URI).accept(MediaType.APPLICATION_JSON)).andExpect(status().isOk());
     }
 
 }

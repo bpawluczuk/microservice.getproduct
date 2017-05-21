@@ -1,4 +1,4 @@
-package pl.itse.getproducts;
+package pl.itse.getproducts.config;
 
 import com.google.common.base.Predicate;
 import org.springframework.context.annotation.Bean;

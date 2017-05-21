@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import pl.itse.getproducts.config.Contract;
 import pl.itse.getproducts.domain.Product;
 import pl.itse.getproducts.service.ProductService;
 
@@ -22,7 +23,7 @@ public class GetProductsController {
         this.productService = productService;
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET, produces = "application/json")
+    @RequestMapping(value = Contract.CONTRACT_PRODUCT_URI, method = RequestMethod.GET, produces = "application/json")
     public List<Product> products() {
         return productService.findAll();
     }
